@@ -1,0 +1,17 @@
+{
+	"EventHubs" : [
+		{
+			"url" : "sb://<EventHubNamespace>.servicebus.windows.net/<EventHub>",
+			"username" : "<SAS Policy>",
+			"password" : "<Key>"
+		},
+		{
+			"url" : "sb://<EventHubNamespace>.servicebus.windows.net/<EventHub>",
+			"username" : "<SAS Policy>",
+			"password" : "<Key>"
+		}
+	],
+	"GithubToken" : "<GithubAPItoken>",
+	"GithubEndPoint" : "https://api.github.com/events?per_page=100"
+}
+    
