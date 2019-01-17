@@ -1,6 +1,5 @@
 # Exploring GitHub events with Azure Data Explorer
 
-----
 
 This project is based on Daniel Dubovski's [post](https://medium.com/microsoftazure/exploring-github-events-with-azure-data-explorer-69f28eb705b9) and python script for exploring GitHub events in ADX using EventHub.
 
