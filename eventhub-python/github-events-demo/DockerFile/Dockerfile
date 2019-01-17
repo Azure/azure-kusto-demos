@@ -1,11 +1,13 @@
-FROM python:3.6
-
-RUN apt-get install -y git
-
-RUN pip install requests azure-eventhub
+FROM python:3.6-alpine
 
 COPY ./run.sh /home/
 
-RUN chmod a+x /home/run.sh
-
+RUN apk add --no-cache openssl-dev && \
+    apk add --no-cache --virtual .build-deps gcc cmake openssl-dev build-base libffi-dev && \
+	apk add --no-cache git && \
+	apk add --no-cache bash && \
+    python3 -m pip install requests azure-eventhub --no-cache-dir &&\ 
+	chmod a+x /home/run.sh && \
+	apk --purge del .build-deps
+	
 CMD bash /home/run.sh 
