@@ -40,7 +40,7 @@ The config file path should be:
 
 ## Deploying Docker image to an Azure container
 
-Azure container can mount Docker image from Docker Hub, for more details about creating Azure container and adding configuration file as a volume please see: 
+Azure container can mount a Docker image from Docker Hub, for more details about creating Azure container and adding configuration file as a volume please see: 
 [Mount an Azure file share in Azure Container Instances](https://docs.microsoft.com/en-us/azure/container-instances/container-instances-volume-azure-files)
 
 
