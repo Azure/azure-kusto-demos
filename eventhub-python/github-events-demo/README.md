@@ -1,23 +1,21 @@
 # Exploring GitHub events with Azure Data Explorer
 
-----
 
 This project is based on Daniel Dubovski's [post](https://medium.com/microsoftazure/exploring-github-events-with-azure-data-explorer-69f28eb705b9) and python script for exploring GitHub events in ADX using EventHub.
 
 The project demonstrates using Docker image which running the script in Azure container for maintaining an events live stream.  
 
-## 
-Setting up ADX and EventHub 
+## Setting up ADX and EventHub 
 
 Follow the post  for setting up ADX, EventHub and integrate them:
 [Exploring GitHub events with Azure Data Explorer](https://medium.com/microsoftazure/exploring-github-events-with-azure-data-explorer-69f28eb705b9)
 
----
+
 ## Using the existing Docker image
 
 A compiled Docker image is available in Docker Hub under the name: **ariely15/githubeventskusto:v1.0.0**
 
----
+
 ## Building a Costume Docker file
 
 1. Install [Docker](https://www.docker.com/get-started)
@@ -32,7 +30,6 @@ A compiled Docker image is available in Docker Hub under the name: **ariely15/gi
  `docker push <account name>/<image name>:v1.0.0`
 
 
-----
 ## Configuration 
 
 The Docker image updates the script from this GitHub repository each time its starts. As the script uses secrets for connecting to GitHub API and the EventHub instances, a configuration file must be added as a volume to the Azure container. 
@@ -43,7 +40,7 @@ The config file path should be:
 
 ## Deploying Docker image to an Azure container
 
-Azure container can mount Docker image from Docker Hub, for more details about creating Azure container and adding configuration file as a volume please see: 
+Azure container can mount a Docker image from Docker Hub, for more details about creating Azure container and adding configuration file as a volume please see: 
 [Mount an Azure file share in Azure Container Instances](https://docs.microsoft.com/en-us/azure/container-instances/container-instances-volume-azure-files)
 
 
