@@ -40,28 +40,47 @@ Save the device connection string to use in the device firmware:
 Create an ADX cluster and database as described in this [Quickstart](https://docs.microsoft.com/en-us/azure/data-explorer/create-cluster-database-portal)
 
 * Create table:
+
 `.create table EspThingEvents (DeviceId:string,EventTime: int, Temperature:double,Humidity:double, Distance:long)`
 
 * Add table mapping:
+
 `.create table EspThingEvents ingestion json mapping "EspThingEventsMapping" '[`
+
 `   {"column":"DeviceId","path":"$.DeviceId"},`
+
 `   {"column":"EventTime","path":"$.EventTime"},`
+
 `   {"column":"Temperature","path":"$.Temperature"},`
+
 `   {"column":"Humidity","path":"$.Humidity"},`
+
 `   {"column":"Distance","path":"$.Distance"}]'`
 
 * Add IotHub ingestion source:
+
 `.add dm service <DM cluster name> eventhub ingestion source IoThubIngestionSource with(`
+
     `IngestionSourceType='IotHub',`
+    
     `EventHubResourceId='<IotHub Resource ID - can be found at the IotHub properties>',`
+    
     `EventHubNamespaceConnectionString='<IotHub Endpoint - can be found at IotHub Built-in endpoints>', `
+    
     `EventHubName='', `
+    
     `EventHubConsumerGroupName='$Default',` 
+    
     `PartitionCount='4',`
+    
     `TargetDatabase='<ADX target database>',`
+    
     `TargetTable='EspThingEvents',`
+    
     `Format='json',`
+    
     `IngestionMappingReference='EspThingEventsMapping'`  
+    
 `)`
     
 # Contributing
