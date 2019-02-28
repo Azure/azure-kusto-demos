@@ -45,12 +45,12 @@ Create an ADX cluster and database as described in this [Quickstart](https://doc
 
 * Add table mapping:
 
-`.create table EspThingEvents ingestion json mapping "EspThingEventsMapping" '[`
->`    {"column":"DeviceId","path":"$.DeviceId"},`
->`    {"column":"EventTime","path":"$.EventTime"},`
->`    {"column":"Temperature","path":"$.Temperature"},`
->`    {"column":"Humidity","path":"$.Humidity"},`
->`    {"column":"Distance","path":"$.Distance"}]'`
+`.create table EspThingEvents ingestion json mapping "EspThingEventsMapping" '[`<br/>
+`    {"column":"DeviceId","path":"$.DeviceId"},`<br/>
+`    {"column":"EventTime","path":"$.EventTime"},`<br/>
+`    {"column":"Temperature","path":"$.Temperature"},`<br/>
+`    {"column":"Humidity","path":"$.Humidity"},`<br/>
+`    {"column":"Distance","path":"$.Distance"}]'`
 
 * Add IotHub ingestion source:
 
