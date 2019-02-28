@@ -18,14 +18,14 @@ Assemble the sensing device by wiring the sensors to the ESP microcontroller as 
 ![wiring](https://github.com/Azure/azure-kusto-demos/blob/master/iothub/espthingdev/wiring.PNG)
 
 ### Arduino IDE 
-Add ESP8266 boards to the Arduino IDE by: 
-    1. In File->Preferences->Additional Boards Manager URLs add: http://arduino.esp8266.com/stable/package_esp8266com_index.json
-    2. In Tools->Board->Boards Manager Install esp8266 by ESP8266 Community **version 2.4.0**
-Add the following libraries in Sketch->Include Library->Manage Libraries:
-    * AzureIoTHub by Microsoft
-    * AzureIoTProtocol_MQTT by Microsoft
-    * AzureIoTUtility by Microsoft
-    * Adafruit Unified Sensor by Adafruit
+Add ESP8266 boards to the Arduino IDE by:<br/>
+    1. In File->Preferences->Additional Boards Manager URLs add: http://arduino.esp8266.com/stable/package_esp8266com_index.json<br/>
+    2. In Tools->Board->Boards Manager Install esp8266 by ESP8266 Community **version 2.4.0**<br/>
+Add the following libraries in Sketch->Include Library->Manage Libraries:<br/>
+    * AzureIoTHub by Microsoft<br/>
+    * AzureIoTProtocol_MQTT by Microsoft<br/>
+    * AzureIoTUtility by Microsoft<br/>
+    * Adafruit Unified Sensor by Adafruit<br/>
     * DHT Sensor Library by Adafruit
     
 ### IotHub
