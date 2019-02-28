@@ -54,17 +54,17 @@ Create an ADX cluster and database as described in this [Quickstart](https://doc
 
 * Add IotHub ingestion source:
 
-`.add dm service <DM cluster name> eventhub ingestion source IoThubIngestionSource with(`
-    `IngestionSourceType='IotHub',`
-    `EventHubResourceId='<IotHub Resource ID - can be found at the IotHub properties>',`
-    `EventHubNamespaceConnectionString='<IotHub Endpoint - can be found at IotHub Built-in endpoints>', `
-    `EventHubName='', `
-    `EventHubConsumerGroupName='$Default',` 
-    `PartitionCount='4',`
-    `TargetDatabase='<ADX target database>',`
-    `TargetTable='EspThingEvents',`
-    `Format='json',`
-    `IngestionMappingReference='EspThingEventsMapping'`  
+`.add dm service <DM cluster name> eventhub ingestion source IoThubIngestionSource with(`<br/>
+    `IngestionSourceType='IotHub',`<br/>
+    `EventHubResourceId='<IotHub Resource ID - can be found at the IotHub properties>',`<br/>
+    `EventHubNamespaceConnectionString='<IotHub Endpoint - can be found at IotHub Built-in endpoints>', `<br/>
+    `EventHubName='', `<br/>
+    `EventHubConsumerGroupName='$Default',` <br/>
+    `PartitionCount='4',`<br/>
+    `TargetDatabase='<ADX target database>',`<br/>
+    `TargetTable='EspThingEvents',`<br/>
+    `Format='json',`<br/>
+    `IngestionMappingReference='EspThingEventsMapping'`  <br/>
 `)`
     
 # Contributing
