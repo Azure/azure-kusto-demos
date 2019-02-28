@@ -15,7 +15,7 @@ This project is heavily based on this [Azure Sample](https://github.com/Azure-Sa
 
 ### Hardware preparation 
 Assemble the sensing device by wiring the sensors to the ESP microcontroller as follows:
-![wiring]()
+![wiring](https://github.com/Azure/azure-kusto-demos/blob/master/iothub/espthingdev/wiring.PNG)
 
 ### Arduino IDE 
 Add ESP8266 boards to the Arduino IDE by: 
