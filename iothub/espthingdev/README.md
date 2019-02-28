@@ -18,10 +18,10 @@ Assemble the sensing device by wiring the sensors to the ESP microcontroller as 
 ![wiring](https://github.com/Azure/azure-kusto-demos/blob/master/iothub/espthingdev/wiring.PNG)
 
 ### Arduino IDE 
-Add ESP8266 boards to the Arduino IDE by:<br/>
-    1. In File->Preferences->Additional Boards Manager URLs add: http://arduino.esp8266.com/stable/package_esp8266com_index.json<br/>
+* Add ESP8266 boards to the Arduino IDE by:<br/>
+    1. In File->Preferences->Additional Boards Manager URLs add:<br/>    http://arduino.esp8266.com/stable/package_esp8266com_index.json<br/>
     2. In Tools->Board->Boards Manager Install esp8266 by ESP8266 Community **version 2.4.0**<br/>
-Add the following libraries in Sketch->Include Library->Manage Libraries:<br/>
+* Add the following libraries in Sketch->Include Library->Manage Libraries:<br/>
     * AzureIoTHub by Microsoft<br/>
     * AzureIoTProtocol_MQTT by Microsoft<br/>
     * AzureIoTUtility by Microsoft<br/>
@@ -29,11 +29,11 @@ Add the following libraries in Sketch->Include Library->Manage Libraries:<br/>
     * DHT Sensor Library by Adafruit
     
 ### IotHub
-Create an IotHub Instance and register a device as described in this [Quickstart](https://docs.microsoft.com/en-us/azure/iot-hub/quickstart-send-telemetry-c)
-Save the device connection string to use in the device firmware: 
-    In 'espthingdev.ino' edit the following lines:
-    `const char ssid[] = ""; //  your WiFi SSID (name)`
-    `const char pass[] = "";    // your WiFi password (use for WPA, or use as key for WEP)`
+Create an IotHub Instance and register a device as described in this [Quickstart](https://docs.microsoft.com/en-us/azure/iot-hub/quickstart-send-telemetry-c)<br/>
+Save the device connection string to use in the device firmware: <br/>
+    In 'espthingdev.ino' edit the following lines:<br/>
+    `const char ssid[] = ""; //  your WiFi SSID (name)`<br/>
+    `const char pass[] = "";    // your WiFi password (use for WPA, or use as key for WEP)`<br/>
     `const char connectionString[] = ""; // iot hub connectionString`
     
 ### Azure Data Explorer
