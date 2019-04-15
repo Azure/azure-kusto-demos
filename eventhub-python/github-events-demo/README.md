@@ -16,7 +16,7 @@ Follow the post for setting up ADX, EventHub and integrate them:
 A compiled Docker image is available in Docker Hub under the name: **ariely15/githubeventskusto:v1.0.0**
 
 
-## Building a Costume Docker file
+## Building a Custom Docker file
 
 1. Install [Docker](https://www.docker.com/get-started)
 2. Create Docker Hub account.
