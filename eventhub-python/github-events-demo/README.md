@@ -3,11 +3,11 @@
 
 This project is based on Daniel Dubovski's [post](https://medium.com/microsoftazure/exploring-github-events-with-azure-data-explorer-69f28eb705b9) and python script for exploring GitHub events in ADX using EventHub.
 
-The project demonstrates using Docker image which running the script in Azure container for maintaining an events live stream.  
+The project demonstrates using Docker image which runs the script in Azure container for maintaining an events live stream.  
 
 ## Setting up ADX and EventHub 
 
-Follow the post  for setting up ADX, EventHub and integrate them:
+Follow the post for setting up ADX, EventHub and integrate them:
 [Exploring GitHub events with Azure Data Explorer](https://medium.com/microsoftazure/exploring-github-events-with-azure-data-explorer-69f28eb705b9)
 
 
