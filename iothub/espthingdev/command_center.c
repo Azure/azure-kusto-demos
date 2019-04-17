@@ -27,8 +27,8 @@ and removing calls to _DoWork will yield the same results. */
 #endif // ! IOT_AGENT_OK
 
 //static const char* connectionString = "HostName=[host].azure-devices.net;DeviceId=[device];SharedAccessKey=[key]";
-static const char DeviceId[] = "SonoffSC";
-static const char connectionString[] = "HostName=IoThubKustoDemoIoThub.azure-devices.net;DeviceId=SonoffSC;SharedAccessKey=A06KCgdKYrsGL9tUQzK4l+LqRM1Qs5uo/jH4euOxV5c=";
+static const char DeviceId[] = "<IotHub device name>";
+static const char connectionString[] = "<IotHub device connection string>";
 
 // Define the Model
 BEGIN_NAMESPACE(EspThingDemo);
