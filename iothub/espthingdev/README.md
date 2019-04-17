@@ -31,10 +31,12 @@ Assemble the sensing device by wiring the sensors to the ESP microcontroller as 
 ### IotHub
 Create an IotHub Instance and register a device as described in this [Quickstart](https://docs.microsoft.com/en-us/azure/iot-hub/quickstart-send-telemetry-c)<br/>
 Save the device connection string to use in the device firmware: <br/>
-    In 'espthingdev.ino' edit the following lines:<br/>
+    In 'espthingdev.ino' enter WIFI credentials:<br/>
     `const char ssid[] = ""; //  your WiFi SSID (name)`<br/>
     `const char pass[] = "";    // your WiFi password (use for WPA, or use as key for WEP)`<br/>
-    `const char connectionString[] = ""; // iot hub connectionString`
+   In 'command_center.c' enter the IotHub device details:
+    `static const char DeviceId[] = "<IotHub device name>";`
+    `static const char connectionString[] = "<IotHub device connection string>";`
     
 ### Azure Data Explorer
 Create an ADX cluster and database as described in this [Quickstart](https://docs.microsoft.com/en-us/azure/data-explorer/create-cluster-database-portal)
