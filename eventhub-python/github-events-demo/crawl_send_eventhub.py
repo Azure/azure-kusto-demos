@@ -112,7 +112,7 @@ class BufferedEventHubSender:
         if len(_item.encode("utf-8")) > self.max_size:
             raise EventHubError(
                 "Item {} is to big ({}) where as limit is {}. Ignoring.".format(
-                    _item, len(_item.encode("utf-8")), self.max_size
+                    item["id"], len(_item.encode("utf-8")), self.max_size
                 )
             )
 
@@ -141,7 +141,7 @@ def run():
 	
     headers = {"Authorization": "token {}".format(token)}
 
-    monitor = Monitor(info)
+    monitor = Monitor(debug)
 
     senders = []
 
@@ -217,8 +217,6 @@ def run():
         except Exception as e:
             error("UNEXPECTED ERROR", repr(e))
             traceback.print_exc()
-
-    os.kill(os.getpid(), 9)
 
 
 if __name__ == "__main__":
