@@ -8,4 +8,4 @@ cp /home/config/EventHubsConfig.json /home/azure-kusto-demos/eventhub-python/git
 
 cd /home/azure-kusto-demos/eventhub-python/github-events-demo/
 
-python crawl_send_eventhub.py &> log
+python crawl_send_eventhub.py &> "../../../config/$(date +"%Y_%m_%d_%I_%M_%p").log"
