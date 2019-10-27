@@ -47,7 +47,7 @@ def loadConfig():
             password=client['password'],
         )
         eventhubs.append(eventHubClient)
-		
+        
     global token
     token = configObj['GithubToken']
     global ENDPOINT
@@ -128,7 +128,7 @@ class BufferedEventHubSender:
             self.sender.send(EventData(self.buffer))
             self.flush_cb(time.time() - start, self.item_count)
         except Exception as e:
-            raise EventHubError("lost the following {} records:\n {}".format(self.item_count, self.buffer))
+            raise EventHubError("lost the following {} records\n".format(self.item_count))
 
         self.buffer = ""
         self.item_count = 0
@@ -138,10 +138,10 @@ def run():
     info("STARTED github to eventhub")
 
     loadConfig()
-	
+    
     headers = {"Authorization": "token {}".format(token)}
 
-    monitor = Monitor(debug)
+    # monitor = Monitor(debug)
 
     senders = []
 
@@ -173,18 +173,18 @@ def run():
     while loop:
         loop_start_time = time.time()
 
-        monitor.report()
+        # monitor.report()
 
         try:
             resp = requests.get(ENDPOINT, headers=headers)
             resp.raise_for_status()
 
-            monitor.requests_issued += 1
+            # monitor.requests_issued += 1
 
             data = sorted(resp.json(), key=lambda x: x["id"])
             payload = ""
 
-            debug("GITHUB REQUEST | took {} sec, got {} events.".format(resp.elapsed.total_seconds(), len(data)))
+            # debug("GITHUB REQUEST | took {} sec, got {} events.".format(resp.elapsed.total_seconds(), len(data)))
 
             for d in data:
                 if d["id"] not in cache:
@@ -194,12 +194,12 @@ def run():
                         except EventHubError as e:
                             error("EventHubError", e.message)
 
-                    monitor.events_sent += 1
+                    # monitor.events_sent += 1
                     cache.add(d.get("id"))
 
             cycle_took = time.time() - loop_start_time
             delay = seconds_per_request - cycle_took
-            debug("CYCLE DONE | took {}, waiting for {}".format(cycle_took, max(delay, 0)))
+            # debug("CYCLE DONE | took {}, waiting for {}".format(cycle_took, max(delay, 0)))
             if delay > 0:
                 time.sleep(delay)
 
@@ -208,7 +208,7 @@ def run():
                 time_to_wait = int(
                     float(resp.headers.get("X-RateLimit-Reset", 60)) - datetime.datetime.utcnow().timestamp()
                 )
-                info("waiting for {}".format(time_to_wait))
+                # info("waiting for {}".format(time_to_wait))
                 if time_to_wait > 0:
                     time.sleep(time_to_wait)
             error("HTTP EXCEPTION", repr(e))
